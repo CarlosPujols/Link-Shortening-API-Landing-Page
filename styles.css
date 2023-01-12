@@ -65,6 +65,7 @@ body a, body button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 }
 
 .nav-info{
@@ -80,7 +81,7 @@ body a, body button{
     align-items: center;
     border-radius: 10px;
     left: 120%;
-    transition: left 0.5s linear;
+    transition: all 0.5s linear;
     visibility: hidden;
 }
 
@@ -136,6 +137,7 @@ body a, body button{
     width: 100%;
     height: 2.5px;
     background-color: var(--grayish-violet);
+    transition: transform 0.5s linear;
 }
 
 .main-content{
@@ -389,9 +391,19 @@ body a, body button{
     justify-content: space-evenly;
 }
 
+.line-1{
+    transform: rotate(45deg);
+}
 
+.line-2{
+    visibility: hidden;
+}
 
-
+.line-3{
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 0;
+}
 
 
 
