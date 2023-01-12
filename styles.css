@@ -33,6 +33,10 @@ body p{
     font-size: 18px;
 }
 
+body a, body button{
+    cursor: pointer;
+}
+
 .global-container{
     display: flex;
     flex-direction: column;
@@ -77,6 +81,7 @@ body p{
     border-radius: 10px;
     left: 120%;
     transition: left 0.5s linear;
+    visibility: hidden;
 }
 
 .nav-links{
@@ -193,6 +198,7 @@ body p{
 
 .active-menu{
     left: 0;
+    visibility: visible;
 }
 
 .main-cta{
@@ -309,12 +315,80 @@ body p{
 
 .background-line{
     width: 8px;
-    height: 120vh;
+    height: 800px;
     background-color: var(--cyan);
     position: absolute;
     top: 0;
     z-index: -1;
 }
+
+
+.boost-links{
+    background-color: var(--dark-violet);
+    height: 45vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url('images/bg-boost-mobile.svg');
+    background-repeat: repeat-y;
+    background-position: right;
+}
+
+.boost-links h2{
+    color: white;
+    font-weight: 700;
+    margin-bottom: 16px;
+    font-size: 1.6rem;
+}
+
+.footer{
+    background-color: var(--very-dark-violet);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer img{
+    margin-top: 48px;
+    margin-bottom: 48px;
+    filter: brightness(1000%);
+}
+
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-info h4, .footer-info ul li a{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-info h4{
+    color: white;
+    margin-bottom: 24px;
+}
+
+.footer-info ul{
+    margin-bottom: 48px;
+}
+
+.footer-info ul li a{
+    color: var(--grayish-violet);
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.social-links{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 
 
 
