@@ -53,14 +53,19 @@
             on how your links are performing.</p>
           <button class="get-started" id="get-started">Get Started</button>
         </div>
-        <img src="images/illustration-working.svg" alt="person working in desk">
+        <div class="image-container">
+          <img src="images/illustration-working.svg" alt="person working in desk">
+        </div>
       </div>
       <form class="main-cta" id="main-cta">
-        <input type="url" name="link" id="link" placeholder="Shorten a link here...">
+        <input type="url" name="link" id="link" required placeholder="Shorten a link here...">
+        <p class="input-error" id="input-error">Please add a link</p>
         <button class="cta-button" id="cta-button">Shorten It!</button>
       </form>
+      <div class="results" id="results-container">
+      </div>
     </main>
-    <section class="selling-points">
+    <section class="selling-points">      
       <div class="selling-points-info">
         <h2>Advanced Statistics</h2>
         <p>Track how your links are performing across the web with our 

@@ -37,6 +37,14 @@ body a, body button{
     cursor: pointer;
 }
 
+body button:hover{
+    background-color: hsl(180, 86%, 73%) !important;
+}
+
+body button:active{
+    background-color: var(--very-dark-violet) !important;
+}
+
 .global-container{
     display: flex;
     flex-direction: column;
@@ -74,15 +82,15 @@ body a, body button{
     width: 90vw;
     height: 57vh;
     top: 96px;
-    z-index: 999;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     border-radius: 10px;
-    left: 120%;
+    left: 0;
+    opacity: 0;
+    z-index: 999;
     transition: all 0.5s linear;
-    visibility: hidden;
 }
 
 .nav-links{
@@ -113,6 +121,7 @@ body a, body button{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     height: 40%;
     padding-bottom: 16px;
     margin-top: -16px;
@@ -124,6 +133,11 @@ body a, body button{
     background-color: rgba(255, 255, 255, 0);
     font-size: 1.1rem;
     font-weight: 700;
+    width: fit-content;
+}
+
+.login-buttons button:nth-of-type(1):hover{
+    background-color: rgba(255, 255, 255, 0) !important;
 }
 
 .login-buttons button:nth-of-type(2){
@@ -144,6 +158,20 @@ body a, body button{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+}
+
+.main-content::after{
+    content: ' ';
+    background-color: rgb(238, 238, 238);
+    width: 120%;
+    height: 100%;
+    position: absolute;
+    top: 880px;
+    left: -10%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -4;
 }
 
 .landing-statement{
@@ -152,12 +180,21 @@ body a, body button{
     margin-bottom: 64px;
 }
 
+.image-container{
+    max-width: 95vw;
+    position: absolute;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    overflow-x: hidden;
+    background-color: white;
+
+}
+
 .landing-statement img{
     width: 140vw;
     height: auto;
-    position: absolute;
-    top: 0;
-    z-index: 997;
 }
 
 .landing-statement-info{
@@ -199,8 +236,7 @@ body a, body button{
 }
 
 .active-menu{
-    left: 0;
-    visibility: visible;
+    opacity: 100%;
 }
 
 .main-cta{
@@ -218,9 +254,9 @@ body a, body button{
     margin-bottom: 64px;
 }
 
-.main-cta button, .main-cta input{
+.main-cta button, .main-cta input, .shorten-result button{
     height: 48px;
-    padding: 8px;
+    padding: 16px;
     border: none;
     border-radius: 5px;
 }
@@ -230,12 +266,95 @@ body a, body button{
     color: var(--grayish-violet);
     padding: 8px;
 }
-.main-cta button{
+
+.main-cta-error input:focus{
+    border: 2px solid var(--red);
+    border-style: inset;
+}
+
+.main-cta-error input:active{
+    border: 2px solid var(--red);
+    border-style: inset;
+}
+
+.main-cta-error input:focus::placeholder{
+    color: var(--red);
+}
+
+.main-cta button, .shorten-result button{
     background-color: var(--cyan);
     margin-top: 16px;
     color: white;
     font-weight: 700;
     font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.shorten-result button{
+    height: 36px;
+}
+
+.input-error{
+    color: var(--red);
+    font-size: 14px;
+    margin-top: 4px;
+    font-style: italic;
+    visibility: hidden;
+}
+
+.results{
+    width: 100%;
+    margin-top: 32px;
+    display: none;
+}
+
+.shorten-result{
+    background-color: white;
+    border-radius: 5px;
+    padding: 16px;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 48px;
+    width: 100%;
+}
+
+
+.shorten-result p{
+    height: 48px;
+    margin-bottom: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: calc(100%);
+}
+
+.shorten-result-info{
+    position: relative;
+}
+
+.shorten-result-info::after{
+    content: " ";
+    width: calc(100% + 32px);
+    height: 2px;
+    background-color: var(--gray);
+    display: flex;
+    position: absolute;
+    top: 40%;
+    margin-left: -16px;
+    opacity: 20%;
+}
+
+.shorten-result p:nth-of-type(2){
+    color: var(--cyan);
+}
+.shorten-result button{
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
 }
 
 .selling-points{
@@ -405,6 +524,16 @@ body a, body button{
     top: 0;
 }
 
+visible{
+    visibility: visible;
+}
+
+.visible-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
 
 
 
