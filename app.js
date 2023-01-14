@@ -17,20 +17,34 @@ menuButton.addEventListener('click',() =>{
 ctaButton.addEventListener('click', (event)=>{
     event.preventDefault();
 
-    let resultModuleChilds = document.querySelectorAll('#shorten-result-container .copy-button').length;
-    
-    let resultModule = `<div class="shorten-result" id="shorten-result-container">
-    
-    <div class="shorten-result-info">
-      <p class="long-link" id="long-link${resultModuleChilds + 1}">https://wwwwwwwwwwwwwwwww.frontendmentor.io</p>
-      <p class="shortened-link" id="shortened-link${resultModuleChilds + 1}">https://wwwwwwwwwwwwwwwwfrntemtor.io</p>
-    </div>
-    <button class="copy-button" id="copy-button${resultModuleChilds + 1}">Copy</button>
-    </div>`;
+    const longUrl = document.getElementById('link').value;
+    const targetUrl = `https://api.shrtco.de/v2/shorten?url=${longUrl}`;
 
-    results.innerHTML += resultModule;
+    fetch(targetUrl)
+    .then((res) => res.json())
+    .then((data) => {
 
-    results.classList.add('visible-result');
+        const longLink = data.result.original_link;
+        const shortLink = data.result.full_short_link2;
+
+        let resultModuleChilds = document.querySelectorAll('#shorten-result-container .copy-button').length;
+        
+        let resultModule = `<div class="shorten-result" id="shorten-result-container">
+        
+        <div class="shorten-result-info">
+        <p class="long-link" id="long-link${resultModuleChilds + 1}">${longLink}</p>
+        <p class="shortened-link" id="shortened-link${resultModuleChilds + 1}">${shortLink}</p>
+        </div>
+        <button class="copy-button" id="copy-button${resultModuleChilds + 1}">Copy</button>
+        </div>`;
+
+        results.innerHTML += resultModule;
+
+        results.classList.add('visible-result');
+    }
+);
+
+    
 
 });
 
@@ -46,4 +60,5 @@ results.addEventListener('click', (event) => {
             button.innerHTML = 'Copy';
         }
     });
-})
+});
+
