@@ -297,6 +297,14 @@ body button:active{
     height: 36px;
 }
 
+.shorten-result button:active{
+    background-color: var(--very-dark-violet);
+}
+
+.shorten-result button:focus{
+    background-color: var(--very-dark-violet);
+}
+
 .input-error{
     color: var(--red);
     font-size: 14px;

@@ -39,4 +39,11 @@ results.addEventListener('click', (event) => {
     let copyTargetNumber = clickedButton.substring(11);
     let shortenedLink = document.getElementById(`shortened-link${copyTargetNumber}`).innerHTML;
     navigator.clipboard.writeText(shortenedLink);
+    event.target.innerHTML = 'Copied!';
+    let otherButtons = Array.from(document.getElementsByClassName('copy-button'));
+    otherButtons.forEach(button => {
+        if (button.id != clickedButton){
+            button.innerHTML = 'Copy';
+        }
+    });
 })
