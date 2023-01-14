@@ -32,20 +32,11 @@ ctaButton.addEventListener('click', (event)=>{
 
     results.classList.add('visible-result');
 
-    for (let i = 1; i <= resultModuleChilds; i++){
-        let copyBtn = document.getElementById(`copy-button${resultModuleChilds + 1}`);
-        copyBtn.addEventListener('click', (event)=>{
-            event.preventDefault();
-            const shortenedLink = document.getElementById(`shortened-link${resultModuleChilds + 1}`).innerText;
-            const buttonSelectTest = `${shortenedLink} ${resultModuleChilds}`
-            navigator.clipboard.writeText(buttonSelectTest);
-        })
-    }
+});
 
-    
-
-    
-
-
-    
+results.addEventListener('click', (event) => {
+    let clickedButton = event.target.id;
+    let copyTargetNumber = clickedButton.substring(11);
+    let shortenedLink = document.getElementById(`shortened-link${copyTargetNumber}`).innerHTML;
+    navigator.clipboard.writeText(shortenedLink);
 })
