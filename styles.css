@@ -267,20 +267,6 @@ body button:active{
     padding: 8px;
 }
 
-.main-cta-error input:focus{
-    border: 2px solid var(--red);
-    border-style: inset;
-}
-
-.main-cta-error input:active{
-    border: 2px solid var(--red);
-    border-style: inset;
-}
-
-.main-cta-error input:focus::placeholder{
-    color: var(--red);
-}
-
 .main-cta button, .shorten-result button{
     background-color: var(--cyan);
     margin-top: 16px;
@@ -532,8 +518,31 @@ body button:active{
     top: 0;
 }
 
-visible{
+.visible{
     visibility: visible;
+}
+
+.main-cta .main-cta-error{
+    border: 3px solid var(--red);
+    border-radius: 5px;
+}
+
+.main-cta .main-cta-error::placeholder{
+    color: var(--red);
+}
+
+.main-cta-error:focus{
+    border: 2px solid var(--red);
+    border-style: inset;
+}
+
+.main-cta-error:active{
+    border: 2px solid var(--red);
+    border-style: inset;
+}
+
+.main-cta-error:focus::placeholder{
+    color: var(--red);
 }
 
 .visible-result{
