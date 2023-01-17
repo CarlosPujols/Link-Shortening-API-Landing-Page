@@ -40,9 +40,9 @@ ctaButton.addEventListener('click', (event)=>{
             const longLink = data.result.original_link;
             const shortLink = data.result.full_short_link2;
 
-            let resultModuleChilds = document.querySelectorAll('#shorten-result-container .copy-button').length;
+            let resultModuleChilds = document.querySelectorAll('#results-container .shorten-result').length;
             
-            let resultModule = `<div class="shorten-result" id="shorten-result-container">
+            let resultModule = `<div class="shorten-result" id="shorten-result-container${resultModuleChilds + 1}">
             
             <div class="shorten-result-info">
             <p class="long-link" id="long-link${resultModuleChilds + 1}">${longLink}</p>
@@ -51,9 +51,21 @@ ctaButton.addEventListener('click', (event)=>{
             <button class="copy-button" id="copy-button${resultModuleChilds + 1}">Copy</button>
             </div>`;
 
+
             results.innerHTML += resultModule;
 
+            let actualModules = document.getElementById('results-container').innerHTML;
+            
+            sessionStorage.setItem('modules', actualModules);
+            
+            let myStorage = sessionStorage.getItem('modules');
+
+            console.log(myStorage);
+
+
+
             results.classList.add('visible-result');
+
             }
         })
         .catch(error => {
@@ -78,3 +90,12 @@ results.addEventListener('click', (event) => {
     });
 });
 
+onload = () => {
+    let storedModules = sessionStorage.getItem('modules');
+    console.log(storedModules);
+    if (storedModules != null){
+        results.innerHTML = storedModules;
+        results.classList.add('visible-result');
+    }
+    
+}
