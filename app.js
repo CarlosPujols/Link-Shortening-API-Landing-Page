@@ -96,6 +96,5 @@ onload = () => {
     if (storedModules != null){
         results.innerHTML = storedModules;
         results.classList.add('visible-result');
-    }
-    
+    }  
 }

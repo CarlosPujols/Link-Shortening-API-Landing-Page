@@ -181,7 +181,7 @@ body button:active{
 }
 
 .image-container{
-    max-width: 95vw;
+    width: 95vw;
     position: absolute;
     top: 0;
     margin-left: auto;
@@ -552,6 +552,102 @@ body button:active{
     align-items: center;
 }
 
+@media only screen and (max-width: 768px) and (min-width: 450px){
+    .landing-statement img{
+        height: 50vh;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+    }
 
+    .image-container{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100vw;
+    }
+}
 
-
+@media only screen and (min-width: 769px) {
+    .navigation{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 32px;
+        max-width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hamburger-menu{
+        display: none;
+    }
+    
+    .nav-info{
+        position: inherit;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        opacity: 100;
+        background-color: rgba(255, 255, 255, 0);
+    }
+    
+    .nav-links{
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: auto;
+        width: 50%;
+        margin-left: 2vw;
+    }
+    
+    .nav-links::after{
+        content: "";
+        width: 0;
+        height: 0;
+    }
+    
+    .nav-links li{
+        color: var(--grayish-violet);
+        font-weight: 700;
+        font-size: 1.1rem;
+    
+    }
+    
+    .login-buttons{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: right;
+        height: 100%;
+        width: 35%;
+        max-width: fit-content;
+        padding-bottom: 0;
+        margin-top: 0;
+    }
+    
+    .login-buttons button{
+        color: var(--grayish-violet);
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+        font-size: 1.1rem;
+        font-weight: 700;
+        width: fit-content;
+    }
+    
+    .login-buttons button:nth-of-type(2){
+        background-color: var(--cyan);
+        color: white;
+        width: fit-content;
+        padding: 24px;
+        height: 48px;
+        border-radius: 50px 50px 50px 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 1.5vw;
+    }
+}
