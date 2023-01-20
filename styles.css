@@ -114,7 +114,11 @@ body button:active{
     color: white;
     font-weight: 700;
     font-size: 1.1rem;
+    cursor: pointer;
+}
 
+.nav-links li:hover{
+    color: var(--very-dark-violet);
 }
 
 .login-buttons{
@@ -448,6 +452,7 @@ body button:active{
     background-image: url('images/bg-boost-mobile.svg');
     background-repeat: repeat-y;
     background-position: right;
+    background-size: 120%;
 }
 
 .boost-links h2{
@@ -495,6 +500,11 @@ body button:active{
     color: var(--grayish-violet);
     margin-bottom: 8px;
     font-size: 14px;
+}
+
+.footer-info ul li a:hover{
+    color: var(--cyan);
+    cursor: pointer;
 }
 
 .social-links{
@@ -566,6 +576,8 @@ body button:active{
         margin-right: auto;
         width: 100vw;
     }
+
+  
 }
 
 @media only screen and (min-width: 769px) {
@@ -575,7 +587,7 @@ body button:active{
         justify-content: space-evenly;
         align-items: center;
         margin-top: 32px;
-        max-width: 85vw;
+        max-width: 80vw;
         margin-left: auto;
         margin-right: auto;
     }
@@ -600,8 +612,8 @@ body button:active{
         justify-content: space-evenly;
         align-items: center;
         height: auto;
-        width: 50%;
-        margin-left: 2vw;
+        width: 55%;
+        margin-left: 24px;
     }
     
     .nav-links::after{
@@ -613,7 +625,8 @@ body button:active{
     .nav-links li{
         color: var(--grayish-violet);
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1rem;
+        cursor: pointer;
     
     }
     
@@ -633,7 +646,7 @@ body button:active{
         color: var(--grayish-violet);
         border: none;
         background-color: rgba(255, 255, 255, 0);
-        font-size: 1.1rem;
+        font-size: 1rem;
         font-weight: 700;
         width: fit-content;
     }
@@ -650,4 +663,367 @@ body button:active{
         justify-content: center;
         margin-left: 1.5vw;
     }
+
+    .main-content{
+        width: 100vw;
+        margin-top: 0;
+    }
+
+    .landing-statement{
+        width: 100%;
+        position: relative;
+        margin-left: 10vw;
+        margin-top: 0;
+        height: 45vh;
+        margin-bottom: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+
+    .landing-statement-info{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .landing-statement-info h1, .landing-statement-info p, .landing-statement-info button{
+        text-align: left;
+        margin-left: 0;
+    }
+    
+    .landing-statement-info h1{
+        font-size: 5rem;
+        line-height: 5.5rem;
+        margin-top: 15vh;
+        width: 50%;
+    }
+    
+    .landing-statement-info p{
+        color: var(--grayish-violet);
+        margin-bottom: 24px;
+        margin-top: -12px;
+        width: 40%;
+        font-size: 23px;
+        line-height: 1.8rem;
+    }
+
+    .image-container{
+        display: flex;
+        width: 50%;
+        position: absolute;
+        right: 0%;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .landing-statement img{
+        margin-top: 48px;
+        width: 50vw;
+        height: auto;
+        max-height: 100%;
+        display: flex;
+        margin-left: 0;
+    }
+
+    .main-cta{
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 144px;
+        padding: 48px;
+        background-image: url('images/bg-shorten-desktop.svg');
+        background-position: center;
+        background-size: cover;
+    }
+
+    .main-cta input{
+        width: 70%;
+    }
+
+    .main-cta p{
+        position: absolute;
+        left: calc(10vw + 48px);
+        margin-top: 80px;
+    }
+
+    .main-cta button{
+        margin-top: 0;
+        width: 25%;
+    }
+
+    .main-content{
+        overflow: hidden;
+    }
+
+    
+    .main-content::after{
+        top: 488px;
+        width: 100%;
+        left: 0;
+    }
+
+    .shorten-result{
+        width: 80vw;
+    }
+
+    .background-line{
+        height: 750px;
+    }
+
+    .selling-points-info, .cards-container{
+        width: 80vw;
+    }
+
+    .boost-links{
+        background-size: 60%;
+        height: 25vh;
+    }
 }
+
+@media only screen and (min-width: 769px) and (max-width:1024px){
+    .landing-statement-info h1{
+        font-size: 7vw;
+        line-height: 10vh;
+        margin-top: 4vh;
+        width: 55%;
+    }
+    
+    .landing-statement-info p{
+        color: var(--grayish-violet);
+        margin-bottom: 24px;
+        margin-top: -12px;
+        width: 40%;
+        font-size: 18px;
+        line-height: 1.8rem;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .landing-statement{
+        margin-bottom: 128px;
+    }
+    .landing-statement-info h1{
+        font-size: 6.5vw;
+        line-height: 10vh;
+        margin-top: 4vh;
+        width: 55%;
+    }
+    
+    .landing-statement-info p{
+        color: var(--grayish-violet);
+        margin-bottom: 24px;
+        margin-top: -12px;
+        width: 50%;
+        font-size: 20px;
+        line-height: 1.8rem;
+    }
+
+    .shorten-result{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 16px;
+        padding: 16px;
+    }
+
+    .shorten-result button{
+        max-width: 10%;
+    }
+
+    .shorten-result:last-of-type{
+        margin-bottom: 48px;
+    }
+
+    .shorten-result-info{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .shorten-result-info p{
+        height: 100%;
+    }
+
+    .shorten-result-info p:nth-of-type(2){
+        text-align: right;
+        padding-right: 16px;
+    }
+    .shorten-result-info::after{
+        display: none;
+    }
+
+    .main-content::after{
+        top: 540px;
+    }
+
+    .main-cta{
+        margin-bottom: 0;
+    }
+
+    .selling-points-info{
+        margin-top: 128px;
+    }
+
+    .cards-container{
+        width: 80vw;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .selling-card{
+        width: 30%;
+        height: 300px;
+        padding: 16px;
+    }
+    
+    .selling-card h3{
+        margin-top: 16px;
+    }
+    .selling-card h3, .selling-card p{
+        text-align: left;
+        margin-left: 0;
+    }
+
+    .selling-card:nth-of-type(2){
+        margin-top: 56px;
+    }
+
+    .selling-card:nth-of-type(3){
+        margin-top: 112px;
+    }
+
+    .selling-card-img{
+        margin-left: 24px;
+
+    }
+
+    .background-line{
+        width: 80vw;
+        height: 8px;
+        background-color: var(--cyan);
+        position: absolute;
+        top: 40%;
+        z-index: -1;
+    }
+
+    .boost-links{
+        height: 25vh;
+        background-image: url('images/bg-boost-desktop.svg');
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .boost-links h2{
+        font-size: 2rem;
+    }
+
+    .footer{
+        height: 40vh;
+        flex-direction: row;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        align-items: flex-start;
+    }
+
+    .footer-logo{
+        width: 10%;
+    }
+
+    .footer-info-container{
+        margin-top: 48px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-info{
+        margin: 0;
+        padding: 0;
+        align-items: flex-start;
+        margin-left: 4vh;
+    }
+
+    .footer-info h4, .footer-info a{
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .social-links{
+        width: 30%;
+    }
+}
+
+@media only screen and (min-width: 1116px) {
+
+    .nav-links{
+        margin-left: 16px;
+        width: 40%;
+    }
+
+    .landing-statement-info{
+        width: 45%;
+        height: 70vh;
+    }
+    .landing-statement-info h1{
+        font-size: clamp(5.25vw, 5.5vw, 5.725vw);
+        line-height: 6.5vw;
+        margin-top: 10vh;
+        width: 100%;
+    }
+    
+    .landing-statement-info p{
+        color: var(--grayish-violet);
+        margin-bottom: 24px;
+        margin-top: -12px;
+        width: 90%;
+        font-size: 20px;
+        line-height: 1.8rem;
+    }
+
+    .get-started button{
+        height: 48px;
+        display: flex;
+    }
+
+    .landing-statement img{
+        margin-top: 24px;
+        width: 40vw;
+        height: auto;
+    }
+
+    .selling-points{
+        margin-top: -72px;
+    }
+
+    .footer-info-container{
+        justify-content: right;
+        margin-right: 0;
+        width: 60%;
+    }
+
+    .footer-info{
+        margin-left: 48px;
+        margin-right: 16px;
+        text-align: left;
+    }
+
+    .footer-info li{
+        margin-bottom: 16px;
+    }
+}
+
